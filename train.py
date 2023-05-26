@@ -105,11 +105,13 @@ class Solver():
         torch.save(self.generator.state_dict(), G_save_path)
         torch.save(self.discriminator.state_dict(), D_save_path)
 
-    def main():
-        opt = get_option()
-        torch.manual_seed(opt.seed)
-        solver = Solver(opt)
-        solver.fit()
 
-    if __name__ == "__main__":
-        main()
+def main():
+    opt = get_option()
+    torch.manual_seed(opt.seed)
+    solver = Solver(opt)
+    solver.fit()
+
+
+if __name__ == "__main__":
+    main()

@@ -20,7 +20,7 @@ def main(opt):
 
     # data
     img_path = os.path.join("./temp.jpg")
-    image = np.array(Image.open(img_path))
+    image = Image.open(img_path)
 
     transform = transforms.Compose([
         transforms.Resize(opt.input_size),
