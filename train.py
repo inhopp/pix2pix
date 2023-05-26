@@ -65,10 +65,10 @@ class Solver():
                 target = target.to(self.dev)
 
                 # train Discriminator
-                fake_image = Generator(input)
-                D_real = Discriminator(input, target)
+                fake_image = self.generator(input)
+                D_real = self.discriminator(input, target)
                 D_real_loss = self.bce_loss(D_real, torch.ones_like(D_real))
-                D_fake = Discriminator(input, fake_image.detach())
+                D_fake = self.discriminator(input, fake_image.detach())
                 D_fake_loss = self.bce_loss(D_fake, torch.zeros_like(D_fake))
                 D_loss = (D_real_loss + D_fake_loss) / 2
 
@@ -77,7 +77,7 @@ class Solver():
                 self.optimizer_D.step()
 
                 # train Generator
-                D_fake = Discriminator(input, fake_image)
+                D_fake = self.discriminator(input, fake_image)
                 G_fake_loss = self.bce_loss(D_fake, torch.ones_like(D_fake))
                 G_recon_loss = self.l1_loss(fake_image, target) * opt.l1_lambda
                 G_loss = G_fake_loss + G_recon_loss
