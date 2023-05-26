@@ -1,0 +1,6 @@
+tqdm
+torchmetrics[image]
+torch
+torchvision
+numpy
+opencv-python
