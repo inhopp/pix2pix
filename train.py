@@ -87,8 +87,8 @@ class Solver():
                 self.optimizer_G.step()
 
                 # fid score update
-                self.fid.update(target, real=True)
-                self.fid.update(fake_image, real=False)
+                self.fid.update(target.cpu(), real=True)
+                self.fid.update(fake_image.cpu(), real=False)
                 self.fid.compute()
 
             if self.fid < self.fid_minimum:

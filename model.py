@@ -99,13 +99,13 @@ class Generator(nn.Module):
 
         up1 = self.up1(bottleneck)
         up2 = self.up2(torch.cat([up1, d7], 1))
-        up3 = self.up2(torch.cat([up2, d6], 1))
-        up4 = self.up2(torch.cat([up3, d5], 1))
-        up5 = self.up2(torch.cat([up4, d4], 1))
-        up6 = self.up2(torch.cat([up5, d3], 1))
-        up7 = self.up2(torch.cat([up6, d2], 1))
+        up3 = self.up3(torch.cat([up2, d6], 1))
+        up4 = self.up4(torch.cat([up3, d5], 1))
+        up5 = self.up5(torch.cat([up4, d4], 1))
+        up6 = self.up6(torch.cat([up5, d3], 1))
+        up7 = self.up7(torch.cat([up6, d2], 1))
 
-        final_conv = self.final_conv(torch.cat([up7, 31], 1))
+        final_conv = self.final_conv(torch.cat([up7, d1], 1))
 
         return final_conv
 
