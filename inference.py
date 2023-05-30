@@ -19,7 +19,7 @@ def main(opt):
     model.load_state_dict(torch.load(ft_path))
 
     # data
-    img_path = os.path.join("./temp.jpg")
+    img_path = os.path.join("./temp.jpeg")
     image = Image.open(img_path)
 
     transform = transforms.Compose([

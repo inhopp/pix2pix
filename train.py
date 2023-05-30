@@ -89,14 +89,16 @@ class Solver():
                 # fid score update
                 self.fid.update(target.cpu(), real=True)
                 self.fid.update(fake_image.cpu(), real=False)
-                self.fid.compute()
+                fid_score = self.fid.compute()
 
-            if self.fid < self.fid_minimum:
-                self.fid_minimum = self.fid
+            if fid_score < self.fid_minimum:
+                self.fid_minimum = fid_score
+                print(fid_score)
                 self.save()
 
             print(
-                f"[Epoch {epoch+1}/{opt.n_epoch}] [D loss: {D_loss.item():.6f}] [G loss: {G_loss.item():.6f}] [FID minimum: {self.fid_minimum:.6f}]")
+                f"[Epoch {epoch+1}/{opt.n_epoch}] [D loss: {D_loss.item():.6f}] [G loss: {G_loss.item():.6f}]")
+            print(self.fid_minimum)
 
     def save(self):
         os.makedirs(os.path.join(self.opt.ckpt_root), exist_ok=True)
