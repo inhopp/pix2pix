@@ -1,6 +1,11 @@
 # pix2pix
 pix2pix from scratch (pytorch)
 
+> [Paper Review](https://inhopp.github.io/paper/Paper17/)
+
+| Input | Output |
+|:-:|:-:|
+| ![7](https://github.com/inhopp/inhopp/assets/96368476/e91d3f38-5d76-43c7-9041-52b65d31670f) | ![8](https://github.com/inhopp/inhopp/assets/96368476/8cd3580c-a9d4-49f8-8bad-574ed07d01d2) |
 
 ## Repository Directory 
 
