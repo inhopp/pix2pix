@@ -5,7 +5,7 @@ pix2pix from scratch (pytorch)
 
 | Input | Output |
 |:-:|:-:|
-| ![7](https://github.com/inhopp/inhopp/assets/96368476/e91d3f38-5d76-43c7-9041-52b65d31670f) | ![8](https://github.com/inhopp/inhopp/assets/96368476/8cd3580c-a9d4-49f8-8bad-574ed07d01d2) |
+| ![7](https://github.com/inhopp/inhopp/assets/96368476/e91d3f38-5d76-43c7-9041-52b65d31670f) | ![8](https://github.com/inhopp/inhopp/assets/96368476/fde1bde3-7dcc-4b77-b207-8c6d4962b1d2) |
 
 ## Repository Directory 
 
